@@ -1,4 +1,6 @@
-package LeetCode.StackAndQueue;
+package LeetCode.StackAndQueue.tree.DFS;
+
+import LeetCode.StackAndQueue.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,8 +60,10 @@ public class preorderTraversal_144 {
         if (head == null) {
             return res;
         }
+
         Stack<TreeNode> stack = new Stack<>();
         stack.push(head);
+
         while (!stack.isEmpty()) {
             TreeNode node = stack.pop();
             res.add(node.val);

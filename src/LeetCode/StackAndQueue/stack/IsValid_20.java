@@ -1,4 +1,4 @@
-package LeetCode.StackAndQueue;
+package LeetCode.StackAndQueue.stack;
 
 import java.util.Stack;
 
