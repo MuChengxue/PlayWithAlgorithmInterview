@@ -1,14 +1,14 @@
 package LeetCode.SortAlgrothims;
 
-public class dada {
+public class Div3DeScanSort {
 
 
     /**
      * 双端扫描三分排序
      */
-    public static void Div3DeScanSort(int[] arr, int leftBound, int rightBound ) {
+    public static void Div3DeScanSort(int[] arr, int leftBound, int rightBound) {
 
-        if (leftBound>=rightBound){
+        if (leftBound >= rightBound) {
             return;
         }
 
