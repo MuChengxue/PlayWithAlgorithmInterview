@@ -1,4 +1,4 @@
-package LeetCode.StackAndQueue.tree.DFS;
+package LeetCode.StackAndQueue.DFS;
 
 import LeetCode.StackAndQueue.TreeNode;
 
@@ -10,11 +10,17 @@ public class InorderTraversal_94 {
     List resList = new ArrayList();
 
     public List<Integer> inorderTraversal(TreeNode root) {
-        if (root != null) {
-            inorderTraversal(root.left);
-            resList.add(root.val);
-            inorderTraversal(root.right);
+//        if (root != null) {
+//            inorderTraversal(root.left);
+//            resList.add(root.val);
+//            inorderTraversal(root.right);
+//        }
+        if (root == null) {
+            return resList;
         }
+        inorderTraversal(root.left);
+        resList.add(root.val);
+        inorderTraversal(root.right);
 
         return resList;
     }
