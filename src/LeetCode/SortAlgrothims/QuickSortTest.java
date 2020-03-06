@@ -33,7 +33,7 @@ public class QuickSortTest {
                 arr2[j] = arr1[j];
             }
 
-            dada.Div3DeScanSort(arr1, 0, arr1.length - 1);
+            Div3DeScanSort.Div3DeScanSort(arr1, 0, arr1.length - 1);
             Arrays.sort(arr2);
 
             for (int k = 0; k < arr1.length; k++) {

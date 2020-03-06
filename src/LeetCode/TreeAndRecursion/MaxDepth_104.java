@@ -12,9 +12,11 @@ public class MaxDepth_104 {
             return 0;
 
         //递归过程逻辑
-        int leftMax = maxDepth(root.left);//左子树高度
-        int rightMax = maxDepth(root.right);//右子树高度
-        return Math.max(leftMax, rightMax) + 1;//加上root
+//        int leftMax = maxDepth(root.left);//左子树高度
+//        int rightMax = maxDepth(root.right);//右子树高度
+//        return Math.max(leftMax, rightMax) + 1;//加上root
+
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 
     public int maxDepth2(TreeNode root) {
