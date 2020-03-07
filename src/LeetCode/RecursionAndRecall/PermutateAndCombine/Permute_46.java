@@ -1,4 +1,4 @@
-package LeetCode.RecursionAndRecall;
+package LeetCode.RecursionAndRecall.PermutateAndCombine;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +6,6 @@ import java.util.List;
 public class Permute_46 {
     List<List<Integer>> res = new ArrayList<>();
     boolean[] used;
-
-    public static void main(String[] args) {
-        System.out.println(new Permute_46().permute(new int[]{1, 2, 3}));
-    }
 
     public List<List<Integer>> permute(int[] nums) {
         res.clear();
@@ -19,6 +15,10 @@ public class Permute_46 {
         used = new boolean[nums.length];
         generatePermutation(nums, 0, new ArrayList<Integer>());
         return res;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new Permute_46().permute(new int[]{1, 2, 3}));
     }
 
     //p中保存了一个有index个元素的排列。
@@ -32,14 +32,16 @@ public class Permute_46 {
         }
 
         for (int i = 0; i < nums.length; i++) {
-            if (!used[i]) {//没有使用
-                p.add(nums[i]);
-                System.out.println("p" + p);
-                used[i] = true;
-                generatePermutation(nums, index + 1, p);
-                p.remove(p.size() - 1);//回复
-                used[i] = false;
+            if (used[i]) {//已经使用，剪枝
+                continue;
             }
+
+            p.add(nums[i]);
+            System.out.println("p" + p);
+            used[i] = true;
+            generatePermutation(nums, index + 1, p);
+            p.remove(p.size() - 1);//回复
+            used[i] = false;
         }
 
         return;
