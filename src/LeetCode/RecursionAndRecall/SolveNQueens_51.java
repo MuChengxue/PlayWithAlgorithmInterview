@@ -16,9 +16,9 @@ public class SolveNQueens_51 {
         if (n < 1)
             return res;
 
-        col = new boolean[n];
-        dia1 = new boolean[2 * n - 1];
-        dia2 = new boolean[2 * n - 1];
+        col = new boolean[n];//每一列
+        dia1 = new boolean[2 * n - 1];//对角线
+        dia2 = new boolean[2 * n - 1];//对角线
         putQueen(n, 0, new ArrayList<>());
         return res;
     }
@@ -38,8 +38,8 @@ public class SolveNQueens_51 {
                 col[i] = true;
                 dia1[index + i] = true;
                 dia2[index - i + n - 1] = true;
-                putQueen(n, index + 1, row);
-                col[i] = false;
+                putQueen(n, index + 1, row);//递归
+                col[i] = false;//回溯
                 dia1[index + i] = false;
                 dia2[index - i + n - 1] = false;
                 row.remove(row.size() - 1);
